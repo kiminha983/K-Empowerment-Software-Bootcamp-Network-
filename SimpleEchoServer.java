@@ -8,7 +8,7 @@ import java.net.Socket;
 public class SimpleEchoServer {
     public static void main(String[] args) {
         System.out.println("에코 서버 시작됨");
-        try (ServerSocket serverSocket = new ServerSocket(6000)) {
+        try (ServerSocket serverSocket = new ServerSocket(9900)) {
             System.out.println("클라이언트 접속 대기 중.....");
             Socket clientSocket = serverSocket.accept();  // 접속 대기
             System.out.println("클라이언트 접속됨.");
@@ -26,8 +26,8 @@ public class SimpleEchoServer {
             } catch (IOException e) {
                 throw new RuntimeException(e);
             } finally {
-                br.close();
-                pw.close();
+                if(br != null) br.close();
+                if(pw != null) pw.close();
             }
         }
         catch (IOException ex) {
