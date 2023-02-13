@@ -3,9 +3,25 @@ import java.util.List;
 import java.util.StringTokenizer;
 
 public abstract class Pokemon {
-    protected String owner;
-    protected List<String> skills;
+    private String owner;
+    private List<String> skills;
     public static int count = 0;
+
+    public String getOwner() {
+        return owner;
+    }
+
+    public void setOwner(String owner) {
+        this.owner = owner;
+    }
+
+    public List<String> getSkills() {
+        return skills;
+    }
+
+    public void setSkills(List<String> skills) {
+        this.skills = skills;
+    }
 
     public Pokemon(String owner, String skills) {
         this.owner = owner;
