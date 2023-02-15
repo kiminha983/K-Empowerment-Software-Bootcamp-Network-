@@ -1,3 +1,5 @@
+package Diablo;
+
 public abstract class Character {
     protected int hp;
     protected int mp;
@@ -5,7 +7,9 @@ public abstract class Character {
 
     WeaponBehavior weapon;  // Association (Aggregation)
 
-    abstract void info();
+    public void info(){
+        System.out.println("체력 : " + hp + "\n지능 : " + mp);
+    }
 
     public void setWeapon(WeaponBehavior weapon) {
         this.weapon = weapon;
